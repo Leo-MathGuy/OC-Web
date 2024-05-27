@@ -1,0 +1,1 @@
+sass --watch webapp/css:webapp/static/css

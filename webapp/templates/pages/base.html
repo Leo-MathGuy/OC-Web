@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block meta %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% endblock meta %}
+
+    {% block head %}
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/tw.css">
+    <script src="https://kit.fontawesome.com/0251f0c93e.js" crossorigin="anonymous"></script>
+    {% endblock head %}
+</head>
+
+<body class="m-0 bg-slate-500">
+    {% include "components/navbar.html" %}
+    {% block content %}
+
+    {% endblock content %}
+
+    {% block scripts %}
+
+    {% endblock scripts %}
+</body>
+
+</html>
