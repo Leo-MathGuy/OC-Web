@@ -14,3 +14,15 @@ header #cta-buttons a:nth-of-type(2) {
 header #cta-buttons a i {
     @apply ml-1;
 }
+
+.land-section h2 {
+    @apply mb-8 text-3xl font-bold text-zinc-800;
+}
+
+.land-section {
+    @apply flex flex-col h-[60vh] md:flex-row items-center px-12 justify-between bg-slate-300;
+}
+
+.land-section article {
+    @apply flex-1 h-full p-8 pl-64 text-xl;
+}
