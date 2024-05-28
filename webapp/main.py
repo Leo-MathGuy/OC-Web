@@ -5,7 +5,7 @@ app = Flask(__name__, static_url_path="/static/")
 
 @app.route("/")
 def index_page():
-    return render_template("pages/index.html", title="Open Space Program!")
+    return render_template("pages/index.html", title="Open Cosmos!")
 
 
 if __name__ == "__main__":
