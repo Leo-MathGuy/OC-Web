@@ -26,7 +26,7 @@ python3 main.py
 
 ### SASS
 
-Needed to edit .scss files, will watch and compile everything in `webapp/css/\*.scss` to `webapp/static/css/\<respective name\>.css`
+Needed to edit .scss files, will watch and compile everything in `webapp/css/*.scss` to `webapp/static/css/\<respective name\>.css`
 
 NOTE: Needs sass to be installed as a command
 
