@@ -36,7 +36,7 @@ NOTE: Needs sass to be installed as a command
 
 ### Tailwind
 
-Needed for the html files, will autogenerate needed classes in html templates, and `webapp/css/tw.css` `@apply`'s to `webapp/static/css/tw.css`
+Needed for the html files, will watch and autogenerate needed classes in html templates, and `webapp/css/tw.css` `@apply`'s to `webapp/static/css/tw.css`
 
 NOTE: Needs node, npm, and tailwind to be installed
 
