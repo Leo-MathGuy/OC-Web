@@ -1,0 +1,11 @@
+header {
+  background-image: url("/static/images/space1.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+}
+
+/*# sourceMappingURL=index.css.map */
