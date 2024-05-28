@@ -8,12 +8,19 @@
 
 {% block content %}
 <header class="w-[100vw] h-[70vh] flex flex-col justify-center items-center md:gap-16 gap-8">
-    <h1 class="text-3xl font-semibold text-center sm:text-4xl md:text-6xl text-slate-200">Some catchy line here</h1>
+    <h1 class="text-3xl font-semibold text-center sm:text-4xl md:text-6xl text-slate-50">Some catchy line here</h1>
     <div id="cta-buttons">
-        <a href="#">Read our blog<i class="fa-solid fa-arrow-right"></i></a>
-        <a href="https://discord.gg/BrHPTPFpKS">Join our Discord<i class="fa-solid fa-arrow-right"></i></a>
-        <a href="#">Button three<i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#" id="cta-1">Read our blog<i class="fa-solid fa-arrow-right"></i></a>
+        <a href="https://discord.gg/BrHPTPFpKS" id="cta-2">Join our Discord<i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#" id="cta-3">Button three<i class="fa-solid fa-arrow-right"></i></a>
     </div>
     <div class="h-64 md:h-48 lg:h-24"></div>
 </header>
 {% endblock content %}
+
+{% block scripts %}
+
+{{ super() }}
+<script src="/static/js/index.js"></script>
+
+{% endblock scripts %}
