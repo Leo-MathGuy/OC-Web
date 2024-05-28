@@ -2,7 +2,7 @@ titleTl = gsap.timeline();
 
 titleTl.from(
     "h1",
-    { opacity: 0, y: 30, duration: 0.8, ease: "power1.inOut", scale: 0.9 },
+    { opacity: 0, y: 30, duration: 1.5, ease: "power1.inOut", scale: 0.9 },
     "<"
 );
 
