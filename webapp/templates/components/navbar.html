@@ -1,11 +1,11 @@
 <nav class="w-full bg-slate-800 h-16 shadow-xl py-2 px-4 flex justify-between text-gray-200 text-xl">
-    <a href="/" class="flex items-center justify-center h-full gap-4 text"><img src="/static/images/logo.webp"
-            alt="OSP Logo" class="rounded-xl w-12">
-        <b>Open Space Program</b></a>
+    <a href="/" class="flex items-center justify-center h-full gap-4 text">{% include "components/logo.html" %}
+        <b>Open Cosmos</b></a>
 
-    <div id="icons" class="grid grid-rows-2 grid-cols-2 items-center content-center justify-items-center">
-        <a href="#"><i class="fa-brands fa-github"></i></a>
-        <a href="https://discord.gg/BrHPTPFpKS"><i class="fa-brands fa-discord"></i></a>
-        <a href="#"><i class="fa-brands fa-square-reddit"></i></a>
+    <div id="icons" class="flex gap-x-2 items-center content-center justify-items-center">
+        <a href="#"><i class="fa-brands fa-github"></i><span id="popout">Github Org</span></a>
+        <a href="https://discord.gg/BrHPTPFpKS"><i class="fa-brands fa-discord"></i><span id="popout">Discord
+                Inv</span></a>
+        <a href="#"><i class="fa-brands fa-square-reddit"></i><span id="popout">Subreddit</span></a>
     </div>
 </nav>

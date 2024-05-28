@@ -1,3 +1,22 @@
-
+nav #icons a {
+  display: flex;
+  justify-items: center;
+  gap: 0.5rem;
+  text-wrap: nowrap;
+}
+nav #icons a i {
+  font-size: 1.5rem;
+}
+nav #icons a span {
+  width: 0;
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  text-wrap: nowrap;
+  transition: width 0.5s;
+  overflow-x: hidden;
+}
+nav #icons a:hover span {
+  width: 5rem;
+}
 
 /*# sourceMappingURL=style.css.map */
