@@ -630,7 +630,7 @@ state the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
 Open Cosmos Website - Website for the open source space flight simulator
-Open Cosmos, based on KSP
+Open Cosmos, based on KSP. 
 Copyright (C) 2024
 
 This program is free software: you can redistribute it and/or modify
