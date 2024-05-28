@@ -21,7 +21,7 @@ Commands will be for Linux sorry if you are windows
 In debug mode, will auto-refresh:
 
 ```bash
-python3 main.py
+python3 app.py
 ```
 
 ### SASS
