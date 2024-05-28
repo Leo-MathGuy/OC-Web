@@ -3,6 +3,7 @@
 ## Guidelines for Python
 
 * Use black for formatting please
+* Create a venv `python3 -m venv venv` `source venv/bin/activate` and install deps `pip install -r requirements.txt`
 
 ## Guidelines for pages
 
@@ -41,4 +42,14 @@ NOTE: Needs node, npm, and tailwind to be installed
 
 ```bash
 ./launchTailwind.sh
+```
+
+## Hosting in production
+
+Python frameworks like Flask use a WSGI (Gateway Interface). An ASGI (Async) server will be used
+
+To run with hypercorn:
+
+```bash
+hypercorn webapp.asgi:asgi_app
 ```
