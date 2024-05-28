@@ -16,7 +16,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-from flask import Flask, render_template
+from flask import Flask, render_template, send_file
 
 app = Flask(__name__, static_url_path="/static/")
 
@@ -24,6 +24,13 @@ app = Flask(__name__, static_url_path="/static/")
 @app.route("/")
 def index_page():
     return render_template("pages/index.html", title="Open Cosmos!")
+
+
+@app.route("/favicon.ico")
+def favicon():
+    return send_file(
+        app.root_path + "/static/favicon.ico"
+    )  # Should be the ONLY manual static file
 
 
 if __name__ == "__main__":
