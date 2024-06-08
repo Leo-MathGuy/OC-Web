@@ -2,27 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-header #cta-buttons a {
-    @apply w-fit mx-auto px-5 md:px-6 md:py-3 py-2 border-[0.2rem] rounded-xl border-slate-300 text-slate-300 font-medium md:text-base text-sm md:inline-block block my-4 md:my-0;
-    background: #ffffff15;
-}
-
-header #cta-buttons a:nth-of-type(2) {
-    @apply px-6 py-3 text-base font-semibold border-0 border-none md:mx-2 md:text-lg md:py-4 md:px-6 rounded-xl text-slate-950 bg-slate-200;
-}
-
-header #cta-buttons a i {
-    @apply ml-1;
-}
-
-.land-section h2 {
-    @apply mb-8 text-3xl font-bold text-zinc-800;
-}
-
-.land-section {
-    @apply flex flex-col h-[60vh] md:flex-row items-center px-12 justify-between bg-slate-300;
-}
-
-.land-section article {
-    @apply flex-1 h-full pt-16 pl-64 text-xl;
+.cta-buttons a {
+    @apply inline-block rounded-xl drop-shadow-lg h-fit;
 }

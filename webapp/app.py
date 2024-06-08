@@ -20,10 +20,19 @@ from flask import Flask, render_template, send_file
 
 app = Flask(__name__, static_url_path="/static/")
 
+HARDCODES = {
+    "projectName": "Open Kosmos",
+    "discordLink": "https://discord.gg/DaPXNFpdXF",
+}
+
+
+def rend_templ(template_name, *args, **kwargs):
+    return render_template(template_name, *args, **HARDCODES, **kwargs)
+
 
 @app.route("/")
 def index_page():
-    return render_template("pages/index.html", title="Open Cosmos!")
+    return rend_templ("pages/index.html", title=f"{HARDCODES['projectName']}!")
 
 
 @app.route("/favicon.ico")

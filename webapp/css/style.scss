@@ -5,6 +5,9 @@
 }
 
 nav {
+    position: fixed;
+    top: 0;
+
     #icons {
         a {
             display: flex;

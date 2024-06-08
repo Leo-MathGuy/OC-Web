@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+nav {
+  position: fixed;
+  top: 0;
+}
 nav #icons a {
   display: flex;
   justify-items: center;

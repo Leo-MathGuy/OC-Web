@@ -4,6 +4,26 @@ header {
     background-repeat: no-repeat;
 }
 
-h1 {
+html {
+    font-family: "Inter", sans-serif;
+}
+
+.spaceOverlay {
+    background: url("/static/images/space1.webp");
+    background-position: 0% 25%;
+}
+
+a,
+span,
+p {
     font-family: "Poppins", sans-serif;
+}
+
+.cta-button {
+    transition: transform 150ms;
+    transition-timing-function: ease-in-out;
+}
+
+.cta-button:hover {
+    transform: translate(0, -4px);
 }

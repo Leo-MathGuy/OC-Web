@@ -7,7 +7,38 @@
 {% endblock head %}
 
 {% block content %}
-
+<div class="!bg-cover spaceOverlay">
+    <div class="h-screen">
+        <div class="md:pt-52 md:pl-24 max-w-[800px] hero">
+            <h1 class="drop-shadow-textDark m-0 text-5xl font-bold">
+                The Community <br class="md:hidden">Space Game
+            </h1>
+            <p class="drop-shadow-textDark mt-8 text-2xl">
+                Open Cosmos is the open source, community-driven
+                spaceflight
+                simulator based off of
+                Kerbal Space Program,
+                started due to Take Two's decisions.
+            </p>
+            <div class="gap-x-4 cta-buttons flex items-center mt-8">
+                <div class="cta-button">
+                    <a href="{{ discordLink }}" target="_blank" class="bg-theme-blue-800 px-6 py-3">
+                        <span class="drop-shadow-textDark text-xl">
+                            Join our Discord <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                    </a>
+                </div>
+                <div class="cta-button">
+                    <a href="#" class="bg-theme-blue-450 px-5 py-2 text-white bg-opacity-50">
+                        <span class="drop-shadow-textLight text-lg font-light">
+                            Read our Blog <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
 
 {% block scripts %}
