@@ -24,5 +24,5 @@ header #cta-buttons a i {
 }
 
 .land-section article {
-    @apply flex-1 h-full p-8 pl-64 text-xl;
+    @apply flex-1 h-full pt-16 pl-64 text-xl;
 }

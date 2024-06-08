@@ -867,7 +867,7 @@ header #cta-buttons a i {
 .land-section article {
   height: 100%;
   flex: 1 1 0%;
-  padding: 2rem;
+  padding-top: 4rem;
   padding-left: 16rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
