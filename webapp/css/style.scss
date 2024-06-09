@@ -32,9 +32,11 @@ nav {
             }
         }
 
-        a:hover {
-            span {
-                width: 5rem;
+        @media screen and (min-width: 460px) {
+            a:hover {
+                span {
+                    width: 5rem;
+                }
             }
         }
     }

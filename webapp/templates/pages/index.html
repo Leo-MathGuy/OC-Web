@@ -8,19 +8,19 @@
 
 {% block content %}
 <div class="!bg-cover spaceOverlay">
-    <div class="h-screen">
-        <div class="md:pt-52 md:pl-24 max-w-[800px] hero">
-            <h1 class="drop-shadow-textDark m-0 text-5xl font-bold">
+    <div class="h-screen"> <!-- Temporary -->
+        <header class="lg:pt-52 pt-32 lg:m-0 mx-auto lg:pl-24 max-w-[80%] lg:max-w-[800px] hero">
+            <h1 class="drop-shadow-textDark md:text-4xl lg:text-5xl m-0 text-3xl font-bold">
                 The Community <br class="md:hidden">Space Game
             </h1>
-            <p class="drop-shadow-textDark mt-8 text-2xl">
+            <p class="drop-shadow-textDark test-md:text-2xl mt-8">
                 Open Cosmos is the open source, community-driven
                 spaceflight
                 simulator based off of
                 Kerbal Space Program,
                 started due to Take Two's decisions.
             </p>
-            <div class="gap-x-4 cta-buttons flex items-center mt-8">
+            <div class="gap-x-4 cta-buttons md:flex-row items-star md:items-center gap-y-4 flex flex-col mt-8">
                 <div class="cta-button">
                     <a href="{{ discordLink }}" target="_blank" class="bg-theme-blue-800 px-6 py-3">
                         <span class="drop-shadow-textDark text-xl">
@@ -36,9 +36,12 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </header>
     </div>
 </div>
+<footer class="bg-theme-blue-400 flex items-center justify-around py-4 text-white shadow-xl">
+    <p>AGPL-3.0</p>
+</footer>
 {% endblock content %}
 
 {% block scripts %}

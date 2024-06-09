@@ -1,9 +1,3 @@
-header {
-    background-image: url("/static/images/space1.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
 html {
     font-family: "Inter", sans-serif;
 }
@@ -11,6 +5,10 @@ html {
 .spaceOverlay {
     background: url("/static/images/space1.webp");
     background-position: 0% 25%;
+
+    @media screen and (max-width: 767px) {
+        background-position: 0% 0%;
+    }
 }
 
 a,

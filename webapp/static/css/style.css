@@ -25,8 +25,10 @@ nav #icons a span {
   transition: width 0.5s;
   overflow-x: hidden;
 }
-nav #icons a:hover span {
-  width: 5rem;
+@media screen and (min-width: 460px) {
+  nav #icons a:hover span {
+    width: 5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
