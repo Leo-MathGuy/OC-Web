@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.cta-buttons a {
-    @apply inline-block rounded-xl drop-shadow-lg h-fit;
+/* Landing Page */
+
+.land_cta-buttons a {
+    @apply rounded-xl drop-shadow-lg h-fit inline-block;
+}
+
+.land_infoboxes {
 }
