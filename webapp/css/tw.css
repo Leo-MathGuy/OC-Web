@@ -29,5 +29,5 @@
 }
 
 .land_discord li {
-    @apply lg:text-xl text-lg;
+    @apply lg:text-xl my-1 text-lg;
 }

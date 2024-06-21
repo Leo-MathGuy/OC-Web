@@ -68,3 +68,74 @@ titleTl.from(
     },
     "<+0.2"
 );
+
+titleTl.from(".land_infoboxes h2", {
+    duration: 0.7,
+    opacity: 0,
+    y: -10,
+    ease: "power2.out",
+});
+titleTl.from(
+    ".land_infoboxes p",
+    {
+        duration: 0.6,
+        opacity: 0,
+        y: -10,
+        ease: "power2.out",
+    },
+    "<+0.25"
+);
+
+$(".land_discord li").each((i, e) => {
+    gsap.from(e, {
+        duration: 1.25,
+        opacity: 0,
+        y: -7,
+        delay: i / 7,
+        scrollTrigger: {
+            trigger: e,
+            start: "bottom 90%",
+        },
+        ease: "power1.out",
+    });
+});
+
+gsap.to("header", {
+    y: -50,
+    scrollTrigger: {
+        trigger: "header",
+        scrub: true,
+        start: "top top",
+        end: "+=1000",
+    },
+});
+
+gsap.to(".land_infoboxes", {
+    y: -70,
+    scrollTrigger: {
+        trigger: ".land_infoboxes",
+        scrub: true,
+        start: "top bottom",
+        end: "+=1000",
+    },
+});
+
+gsap.to(".text-par", {
+    y: -50,
+    scrollTrigger: {
+        trigger: ".text-par",
+        scrub: true,
+        start: "top bottom",
+        end: "+=700",
+    },
+});
+
+gsap.to(".starOverlay>iframe", {
+    y: -50,
+    scrollTrigger: {
+        trigger: ".starOverlay>iframe",
+        scrub: true,
+        start: "top bottom",
+        end: "+=700",
+    },
+});
