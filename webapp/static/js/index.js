@@ -90,11 +90,13 @@ $(".land_discord li").each((i, e) => {
     gsap.from(e, {
         duration: 1.25,
         opacity: 0,
-        y: -7,
+        y: -5,
         delay: i / 7,
         scrollTrigger: {
             trigger: e,
-            start: "bottom 90%",
+            start: "top 99%",
+            end: "+=100",
+            scrub: true,
         },
         ease: "power1.out",
     });
