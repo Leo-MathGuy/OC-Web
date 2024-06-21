@@ -4,9 +4,12 @@
     box-sizing: border-box;
 }
 
+/* Components */
+
 nav {
     position: fixed;
     top: 0;
+    z-index: 100;
 
     #icons {
         a {
@@ -40,4 +43,18 @@ nav {
             }
         }
     }
+}
+
+/* General Styles */
+
+.light-text-shadow {
+    text-shadow: 0 2px 4px #ffffff5a;
+}
+
+.darker-text-shadow {
+    text-shadow: 0 2px 4px #0000004c;
+}
+
+.dark-text-shadow {
+    text-shadow: 0 2px 3px #00000040;
 }

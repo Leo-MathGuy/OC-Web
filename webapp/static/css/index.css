@@ -3,13 +3,18 @@ html {
 }
 
 .spaceOverlay {
-  background: url("/static/images/space1.webp");
+  background: linear-gradient(0deg, #070a12 0%, rgba(7, 10, 18, 0) 25%), url("/static/images/space1.webp");
   background-position: 0% 25%;
 }
 @media screen and (max-width: 767px) {
   .spaceOverlay {
     background-position: 0% 0%;
   }
+}
+
+.starOverlay {
+  background: linear-gradient(180deg, #070a12 0%, rgba(7, 10, 18, 0) 75%), url("/static/images/space2.webp");
+  background-position: center 70%;
 }
 
 a,

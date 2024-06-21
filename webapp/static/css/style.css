@@ -4,9 +4,11 @@
   box-sizing: border-box;
 }
 
+/* Components */
 nav {
   position: fixed;
   top: 0;
+  z-index: 100;
 }
 nav #icons a {
   display: flex;
@@ -29,6 +31,19 @@ nav #icons a span {
   nav #icons a:hover span {
     width: 5rem;
   }
+}
+
+/* General Styles */
+.light-text-shadow {
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3529411765);
+}
+
+.darker-text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2980392157);
+}
+
+.dark-text-shadow {
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2509803922);
 }
 
 /*# sourceMappingURL=style.css.map */

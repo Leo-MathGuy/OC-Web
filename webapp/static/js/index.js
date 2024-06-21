@@ -48,7 +48,7 @@ for (let i = 0; i < last_letters.length; i++) {
 }
 
 titleTl.from(
-    $(".cta-buttons a").get(0),
+    $(".cta-button a").get(0),
     {
         duration: 1,
         opacity: 0,
@@ -59,7 +59,7 @@ titleTl.from(
 );
 
 titleTl.from(
-    $(".cta-buttons a").get(1),
+    $(".cta-button a").get(1),
     {
         duration: 1,
         opacity: 0,

@@ -7,18 +7,15 @@
 {% endblock head %}
 
 {% block content %}
-<div class="!bg-cover spaceOverlay">
+<div class="!bg-cover spaceOverlay pb-12">
     <div class="h-[80vh]">
         <header class="lg:pt-52 pt-32 lg:m-0 mx-auto lg:pl-24 max-w-[80%] lg:max-w-[800px] hero">
             <h1 class="drop-shadow-textDark md:text-4xl lg:text-5xl m-0 text-3xl font-bold">
                 The Community <br class="md:hidden">Space Game
             </h1>
             <p class="drop-shadow-textDark test-md:text-2xl mt-8">
-                Open Cosmos is the open source, community-driven
-                spaceflight
-                simulator based off of
-                Kerbal Space Program,
-                started due to Take Two's decisions.
+                Open Cosmos is the open source, community-driven spaceflight simulator based off of Kerbal Space
+                Program, started due to Take Two's decisions.
             </p>
             <div class="gap-x-4 land_cta-buttons md:flex-row items-star md:items-center gap-y-4 flex flex-col mt-8">
                 <div class="cta-button">
@@ -38,27 +35,53 @@
             </div>
         </header>
     </div>
-    <article class="land_infoboxes">
+    <article class="land_infoboxes md:flex-row gap-y-8 flex flex-col items-center justify-around text-white">
         <section>
-            <h2>Project Status</h2>
-            <p>The project is currently in the extremely early stage, meaning you could make a lasting impact on the
-                development of the game</p>
+            <h2 class="light-text-shadow">Project Status</h2>
+            <p class="light-text-shadow">
+                The project is currently in the extremely early stage, meaning you could make a lasting impact on the
+                development of the game!
+            </p>
         </section>
-        <section>
-            <h2>Help and Contribution</h2>
-            <p>Being open source and community-led, this means anyone can contribute!
+        <section class="land_biggerbox">
+            <h2 class="light-text-shadow">Help and Contribution</h2>
+            <p class="light-text-shadow">
+                Being open source and community-led, this means anyone can contribute!
                 You don't even need to know how to code, contributions in music, sounds, textures, models, even just
-                spreading the word are greatly appreciated!</p>
+                spreading the word are greatly appreciated!
+            </p>
         </section>
         <section>
-            <h2>Community</h2>
-            <p>Our community is made of KSP enthusiasts striving for the perfect rocket game that was never delivered.
-                Join the discord to join the community!</p>
+            <h2 class="light-text-shadow">Community</h2>
+            <p class="light-text-shadow">
+                Our community is made of KSP enthusiasts striving for the perfect rocket game that was never delivered.
+                Join the discord to join the community!
+            </p>
         </section>
     </article>
 </div>
+<article
+    class="!bg-cover starOverlay h-[80vh] flex flex-col md:flex-row justify-around text-white items-center gap-y-12 land_discord pb-12 pt-16 md:pt-0">
+    <div class="md:w-2/5 w-5/6">
+        <p class="lg:text-2xl text-xl">
+            Join the Discord server to contribute to the project, get updates, or just chat about KSP!
+            <br /><br />
+            We have:
+        </p>
+        <ul class="mt-2 list-disc list-inside">
+            <li>Channels for every part of development</li>
+            <li>Welcoming community</li>
+            <li>Prototype channels</li>
+            <li>General chatting</li>
+        </ul>
+    </div>
+
+    <iframe src="https://discord.com/widget?id=1244471704055713842&theme=dark" allowtransparency="true" frameborder="0"
+        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        class="rounded-md lg:rounded-xl lg:w-[350px] lg:h-[600px] md:w-[300px] md:h-[450px] w-3/4 sm:w-1/2 h-[500px]"></iframe>
+</article>
 <footer class="bg-theme-blue-400 flex items-center justify-around py-4 text-white shadow-xl">
-    <p>AGPL-3.0</p>
+    <p>ANCL</p>
 </footer>
 {% endblock content %}
 

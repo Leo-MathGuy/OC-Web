@@ -563,6 +563,10 @@ video {
   margin-right: auto;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .mt-8 {
   margin-top: 2rem;
 }
@@ -584,6 +588,14 @@ video {
   height: fit-content;
 }
 
+.h-\[550px\] {
+  height: 550px;
+}
+
+.h-\[500px\] {
+  height: 500px;
+}
+
 .w-12 {
   width: 3rem;
 }
@@ -592,8 +604,36 @@ video {
   width: 100%;
 }
 
+.w-5\/6 {
+  width: 83.333333%;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
+}
+
+.w-1\/5 {
+  width: 20%;
+}
+
+.w-1\/2 {
+  width: 50%;
+}
+
+.w-3\/4 {
+  width: 75%;
+}
+
 .max-w-\[80\%\] {
   max-width: 80%;
+}
+
+.list-inside {
+  list-style-position: inside;
+}
+
+.list-disc {
+  list-style-type: disc;
 }
 
 .flex-col {
@@ -642,6 +682,18 @@ video {
   row-gap: 1rem;
 }
 
+.gap-y-8 {
+  row-gap: 2rem;
+}
+
+.gap-y-12 {
+  row-gap: 3rem;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
 .rounded-xl {
   border-radius: 0.75rem;
 }
@@ -668,7 +720,7 @@ video {
 
 .bg-theme-dark {
   --tw-bg-opacity: 1;
-  background-color: rgb(5 6 15 / var(--tw-bg-opacity));
+  background-color: rgb(7 10 18 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50 {
@@ -709,8 +761,28 @@ video {
   padding-bottom: 1rem;
 }
 
+.pb-12 {
+  padding-bottom: 3rem;
+}
+
 .pt-32 {
   padding-top: 8rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
+.pt-0 {
+  padding-top: 0px;
+}
+
+.pt-12 {
+  padding-top: 3rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
 }
 
 .text-3xl {
@@ -792,12 +864,111 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.land_infoboxes {
+.land_infoboxes section {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .land_infoboxes section {
+    width: 33.333333%;
+    gap: 1.5rem;
+  }
+}
+
+.land_infoboxes section.land_biggerbox {
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .land_infoboxes section.land_biggerbox {
+    gap: 2rem;
+  }
+}
+
+.land_infoboxes h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 200;
+}
+
+@media (min-width: 768px) {
+  .land_infoboxes h2 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .land_infoboxes h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.land_infoboxes h2 {
+  font-family: "Poppins", sans-serif;
+}
+
+.land_infoboxes p {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .land_infoboxes p {
+    width: 83.333333%;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .land_infoboxes p {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+.land_infoboxes p {
+  line-height: 150% !important;
+}
+
+.land_discord li {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+@media (min-width: 1024px) {
+  .land_discord li {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .sm\:w-1\/2 {
+    width: 50%;
+  }
 }
 
 @media (min-width: 768px) {
   .md\:hidden {
     display: none;
+  }
+
+  .md\:h-\[450px\] {
+    height: 450px;
+  }
+
+  .md\:w-\[300px\] {
+    width: 300px;
+  }
+
+  .md\:w-2\/5 {
+    width: 40%;
   }
 
   .md\:flex-row {
@@ -806,6 +977,14 @@ video {
 
   .md\:items-center {
     align-items: center;
+  }
+
+  .md\:pt-16 {
+    padding-top: 4rem;
+  }
+
+  .md\:pt-0 {
+    padding-top: 0px;
   }
 
   .md\:text-4xl {
@@ -819,8 +998,20 @@ video {
     margin: 0px;
   }
 
+  .lg\:h-\[600px\] {
+    height: 600px;
+  }
+
+  .lg\:w-\[350px\] {
+    width: 350px;
+  }
+
   .lg\:max-w-\[800px\] {
     max-width: 800px;
+  }
+
+  .lg\:rounded-xl {
+    border-radius: 0.75rem;
   }
 
   .lg\:pl-24 {
@@ -829,6 +1020,11 @@ video {
 
   .lg\:pt-52 {
     padding-top: 13rem;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .lg\:text-5xl {

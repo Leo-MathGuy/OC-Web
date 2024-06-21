@@ -39,7 +39,7 @@ def index_page():
 def favicon():
     return send_file(
         app.root_path + "/static/favicon.ico"
-    )  # Should be the ONLY manual static file
+    )  # Should be the ONLY manually made static file, TRUST!!!
 
 
 if __name__ == "__main__":
