@@ -1,5 +1,5 @@
 """    
-    Open Cosmos Website - Website for the Open Cosmos OSS Spaceflight Sim, based on KSP
+    Open Cosmos Website - Website for the Open Cosmos Source-Available Community Spaceflight Sim, based on KSP
     Copyright (C) 2024, OC Community
 
     This program is free software: you can redistribute it and/or modify
