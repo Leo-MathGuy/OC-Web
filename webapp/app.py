@@ -1,5 +1,5 @@
 """    
-    Open Cosmos Website - Website for the Open Cosmos OSS Spaceflight Sim, based on KSP
+    Open Cosmos Website - Website for the Open Cosmos Source-Available Community Spaceflight Sim, based on KSP
     Copyright (C) 2024, OC Community
 
     This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,9 @@
     along with this program.  If not, see <https://wwwp.gnu.org/licenses/>.
 """
 
-from flask import Flask, render_template, send_file
+from flask import Flask, render_template, send_file, g
+from sqlalchemy import create_engine
+from sqlalchemy.orm import scoped_session, sessionmaker, declarative_base
 
 app = Flask(__name__, static_url_path="/static/")
 
@@ -28,6 +30,27 @@ HARDCODES = {
 
 def rend_templ(template_name, *args, **kwargs):
     return render_template(template_name, *args, **HARDCODES, **kwargs)
+
+
+# region Database
+
+## The code below is totally mine and I did not copy them from the official flask documentation tutorial, trust me ok 100% legit
+
+
+DATABASE = "./db.sqlite3"
+engine = create_engine(f"sqlite:///{DATABASE}")
+db_session = scoped_session(
+    sessionmaker(autocommit=False, autoflush=False, bind=engine)
+)
+Base = declarative_base()
+Base.query = db_session.query_property()
+
+
+def get_user_data(name: str) -> dict:
+    pass
+
+
+# endregion
 
 
 @app.route("/")
