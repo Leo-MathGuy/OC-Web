@@ -53,3 +53,13 @@ To run with hypercorn:
 ```bash
 hypercorn webapp.asgi:asgi_app
 ```
+
+## Major Code Structure
+
+### SQL
+
+SQL Is through sqlite3 database, defined schema in schema.sql.
+
+To edit existing, manually alter the database.
+
+To access the db through the code, the `query_db()` function I totally wrote myself trust legit 100% should be used, and to prevent repetition, please prefer to create functions for common calls instead of hardcoding.

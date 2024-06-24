@@ -6,10 +6,14 @@
 <link rel="stylesheet" href="/static/css/index.css">
 {% endblock head %}
 
+{% block bodyclasses %}
+{{ super() }} bg-theme-dark
+{% endblock bodyclasses %}
+
 {% block content %}
 <div class="!bg-cover spaceOverlay pb-12">
     <div class="h-[80vh]">
-        <header class="lg:pt-52 pt-32 lg:m-0 mx-auto lg:pl-24 max-w-[80%] lg:max-w-[800px] hero">
+        <header class="lg:pt-40 pt-24 lg:m-0 mx-auto lg:pl-24 max-w-[80%] lg:max-w-[800px] hero">
             <h1 class="drop-shadow-textDark md:text-4xl lg:text-5xl m-0 text-3xl font-bold">
                 The Community <br class="md:hidden">Space Game
             </h1>

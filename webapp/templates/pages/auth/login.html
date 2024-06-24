@@ -1,10 +1,11 @@
-{% extends "pages/base.html" %}
+{% extends "pages/auth/auth.html" %}
+
 {% block content %}
 
-<form action="/auth/login" method="post">
+<form action="/auth/login" method="post" class="auth_form">
     <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
     <label for="username">Username: <input type="text" name="username" id="username" required></label>
-    <label for="password"><input type="password" name="password" id="password" required></label>
+    <label for="password">Password: <input type="password" name="password" id="password" required></label>
 </form>
 
 {% endblock content %}

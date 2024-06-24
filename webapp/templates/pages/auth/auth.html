@@ -1,0 +1,10 @@
+{% extends "pages/base.html" %}
+
+{% block bodyclasses %}
+{{ super() }} bg-theme-blue-700
+{% endblock bodyclasses %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="/static/css/auth.css">
+{% endblock head %}

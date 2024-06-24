@@ -31,3 +31,9 @@
 .land_discord li {
     @apply lg:text-xl my-1 text-lg;
 }
+
+/* Auth Pages */
+
+.auth_form {
+    @apply bg-theme-blue-800;
+}

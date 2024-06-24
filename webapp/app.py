@@ -16,38 +16,75 @@
     along with this program.  If not, see <https://wwwp.gnu.org/licenses/>.
 """
 
-from flask import Flask, render_template, send_file, g
-from sqlalchemy import create_engine
-from sqlalchemy.orm import scoped_session, sessionmaker, declarative_base
+from flask import Flask, redirect, render_template, send_file, g
+
+import sqlite3 as sql
+import bcrypt
 
 app = Flask(__name__, static_url_path="/static/")
+app.url_map.strict_slashes = False
 
 HARDCODES = {
     "projectName": "Open Kosmos",
     "discordLink": "https://discord.gg/DaPXNFpdXF",
 }
 
+DATABASE = "./db.sqlite3"
 
-def rend_templ(template_name, *args, **kwargs):
+
+def rend_templ(template_name: str, *args, **kwargs):
     return render_template(template_name, *args, **HARDCODES, **kwargs)
+
+
+def rend_page(
+    template_name: str, title: str = HARDCODES["projectName"], *args, **kwargs
+):
+    return rend_templ("pages/" + template_name, title=title, *args, **kwargs)
 
 
 # region Database
 
-## The code below is totally mine and I did not copy them from the official flask documentation tutorial, trust me ok 100% legit
+## The four database functions below are totally mine and I did not copy them from the official flask documentation tutorial, trust me ok 100% legit
 
 
-DATABASE = "./db.sqlite3"
-engine = create_engine(f"sqlite:///{DATABASE}")
-db_session = scoped_session(
-    sessionmaker(autocommit=False, autoflush=False, bind=engine)
-)
-Base = declarative_base()
-Base.query = db_session.query_property()
+def get_db():
+    db = getattr(g, "_database", None)
+    if db is None:
+        db = g._database = sql.connect(DATABASE)
+    return db
 
 
-def get_user_data(name: str) -> dict:
-    pass
+def query_db(query, args=(), one=False):
+    cur = get_db().execute(query, args)
+    rv = cur.fetchall()
+    cur.close()
+    return (rv[0] if rv else None) if one else rv
+
+
+def init_db():
+    with app.app_context():
+        db = get_db()
+        with app.open_resource("schema.sql", mode="r") as f:
+            db.cursor().executescript(f.read())
+        db.commit()
+
+
+@app.teardown_appcontext
+def close_connection(exception):
+    db = getattr(g, "_database", None)
+    if db is not None:
+        db.close()
+
+
+## DB Functions. Will not work through console, only with app context (when app is running)
+
+
+def get_users() -> list:
+    return query_db("SELECT * FROM User;")
+
+
+def get_user_data_by_username(username: str) -> dict:
+    users = query_db(f"SELECT * FROM User WHERE username={username};")
 
 
 # endregion
@@ -55,7 +92,7 @@ def get_user_data(name: str) -> dict:
 
 @app.route("/")
 def index_page():
-    return rend_templ("pages/index.html", title=f"{HARDCODES['projectName']}!")
+    return rend_page("index.html")
 
 
 @app.route("/favicon.ico")
@@ -64,6 +101,21 @@ def favicon():
         app.root_path + "/static/favicon.ico"
     )  # Should be the ONLY manually made static file, TRUST!!!
 
+
+# region auth
+
+
+@app.route("/login")
+def login_page():
+    return rend_page("auth/login.html", "Login")
+
+
+@app.route("/signup")
+def signup_page():
+    return rend_page("auth/signup.html", "Signup")
+
+
+# endregion
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)
