@@ -1,11 +1,54 @@
 form {
   width: fit-content;
   margin: 7rem auto;
-  padding: 2rem;
-  border-radius: 5px;
+  padding: 2.5rem;
+  border-radius: 6px;
+  font-family: "Poppins", sans-serif;
 }
-form label {
-  display: block;
+
+label {
+  padding: 8px 0 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-weight: 300;
+}
+
+input {
+  border-radius: 3px;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+form > div {
+  margin: 10px 0;
+}
+form > div p {
+  font-weight: 500;
+  margin-left: -10px;
+  margin-top: 30px;
+}
+
+.red {
+  color: red;
+  opacity: 0.6;
+  margin-right: 2px;
+  padding: 0;
+  display: inline;
 }
 
 /*# sourceMappingURL=auth.css.map */

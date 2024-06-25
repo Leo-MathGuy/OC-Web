@@ -4,16 +4,38 @@
 
 <form action="/auth/signup" method="post" class="auth_form">
     <h1>Sign Up</h1>
-    <h2>Ready for </h2>
+    <h2>Ready for a blastoff?</h2>
 
-    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
-    <label for="username">Username: <input type="text" name="username" id="username" required></label>
-    <label for="password1">Password: <input type="password" name="password1" id="password1" required></label>
-    <label for="password2">Password (again): <input type="password" name="password2" id="password2" required></label>
-    <p>Optional</p>
-    <label for="email">Email: <input type="email" name="email" id="email"></label>
-    <label for="name">Display name: <input type="text" name="name" id="name"></label>
-    <label for="subscribe">Subscribe to newsletter: <input type="checkbox" name="subscribe" id="subscribe"></label>
+    <div>
+        <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+        <label for="username">
+            Username: <input type="text" name="username" id="username" required minlength=3 maxlength=30
+                pattern="^([A-z]|[0-9]|_|-)+$">
+        </label>
+
+        <label for="password1">
+            Password: <input type="password" name="password1" id="password1" required minlength=8 maxlength=60>
+        </label>
+
+        <label for="password2">
+            Password (again): <input type="password" name="password2" id="password2" required minlength=8 maxlength=80>
+        </label>
+    </div>
+    <div>
+        <p>Optional:</p>
+        <label for="email">Email: <input type="email" name="email" id="email" maxlength=256></label>
+        <label for="subscribe">Subscribe to newsletter: <input type="checkbox" name="subscribe" id="subscribe"
+                disabled></label>
+        <label for="name">Display name: <input type="text" name="name" id="name" maxlength=30 minlength=3></label>
+    </div>
+    <input type="submit" value="Register Account">
 </form>
 
 {% endblock content %}
+
+{% block scripts %}
+
+{{ super() }}
+<script src="/static/js/signup.js"></script>
+
+{% endblock scripts %}
