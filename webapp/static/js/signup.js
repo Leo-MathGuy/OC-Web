@@ -40,12 +40,34 @@ function checkElement(el, checkers) {
     return true;
 }
 
-let password1 = $("#password1").get(0);
+let password1 = $("#password1");
+let subscribe = $("#subscribe");
+let email = $("#email");
+
+function enableNews() {
+    subscribe.prop("disabled", false);
+    $('label[for="subscribe"]').css("color", "black");
+}
+function disableNews() {
+    subscribe.prop("disabled", true);
+    subscribe.prop("checked", false);
+    $('label[for="subscribe"]').css("color", "#888");
+}
+
+disableNews();
+
+email.on("input", () => {
+    if (email.val()) {
+        enableNews();
+    } else {
+        disableNews();
+    }
+});
 
 $("form")
     .get(0)
     .addEventListener("submit", (e) => {
-        if (!checkElement(password1, passCheckers)) {
+        if (!checkElement(password1.get(0), passCheckers)) {
             e.preventDefault();
             return false;
         }
