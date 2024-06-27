@@ -1,28 +1,57 @@
+let username = $("#username");
+let password1 = $("#password1");
+let password2 = $("#password2");
+let subscribe = $("#subscribe");
+let email = $("#email");
+
 function clearPass() {
-    $("#password1").get(0).setCustomValidity("");
-    $("#password2").get(0).setCustomValidity("");
+    password1.get(0).setCustomValidity("");
+    password2.get(0).setCustomValidity("");
 }
 
 var passCheckers = [
     () => {
-        return $("#password1").val() != $("#password2").val()
-            ? "Passwords must match"
-            : "";
+        return password1.val() != password2.val() ? "Passwords must match" : "";
     },
     () => {
-        return /^\d+$/.test($("#password1").val())
+        return /^\d+$/.test(password1.val())
             ? "Passwords cannot be all numbers"
             : "";
     },
     () => {
-        return /^[A-z]+$/.test($("#password1").val())
+        return /^[A-z]+$/.test(password1.val())
             ? "Passwords cannot be all letters"
             : "";
     },
     () => {
-        return $("#password1").val() == "password123"
-            ? "You cannot be serious"
-            : "";
+        return password1.val() == "password123" ? "You cannot be serious" : "";
+    },
+];
+
+var usernameCheckers = [
+    () => {
+        let result = null;
+
+        var request = new XMLHttpRequest();
+        request.timeout = 2500;
+        request.open(
+            "GET",
+            "/api/client/checkuser?user=" + username.val(),
+            false
+        );
+        request.send();
+
+        if (false) {
+            // TODO Add error detection
+            return "Error fetching username availability, please try again";
+        }
+
+        if (false) {
+            // TODO Add user check fail
+            return "Username taken";
+        }
+
+        return "";
     },
 ];
 
@@ -39,10 +68,6 @@ function checkElement(el, checkers) {
 
     return true;
 }
-
-let password1 = $("#password1");
-let subscribe = $("#subscribe");
-let email = $("#email");
 
 function enableNews() {
     subscribe.prop("disabled", false);
@@ -67,7 +92,12 @@ email.on("input", () => {
 $("form")
     .get(0)
     .addEventListener("submit", (e) => {
-        if (!checkElement(password1.get(0), passCheckers)) {
+        if (
+            !(
+                checkElement(password1.get(0), passCheckers) &&
+                checkElement(username.get(0), usernameCheckers)
+            )
+        ) {
             e.preventDefault();
             return false;
         }

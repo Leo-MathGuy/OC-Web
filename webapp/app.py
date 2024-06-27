@@ -16,8 +16,10 @@
     along with this program.  If not, see <https://wwwp.gnu.org/licenses/>.
 """
 
-from flask import Flask, redirect, render_template, send_file, g
+from flask import Flask, redirect, render_template, request, send_file, Response, g
+from json import dumps, loads
 
+import schema
 import sqlite3 as sql
 import bcrypt
 
@@ -113,6 +115,26 @@ def login_page():
 @app.route("/signup")
 def signup_page():
     return rend_page("auth/signup.html", "Signup")
+
+
+@app.route("/api/client/checkuser")
+def check_user():
+
+    if not (u := request.args.get("user")):  # Walrus my beloved
+        return Response("<h1>Malformed Request</h1>", status=400)
+
+    users = get_users()
+
+    print(users)
+    return Response(
+        str(
+            int(
+                u.lower()
+                in list(map(lambda x: x[schema.USER.index("username")].lower(), users))
+            )
+        ),
+        status=200,
+    )
 
 
 # endregion
