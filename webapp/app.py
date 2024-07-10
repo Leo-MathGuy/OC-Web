@@ -125,7 +125,6 @@ def check_user():
 
     users = get_users()
 
-    print(users)
     return Response(
         str(
             int(

@@ -30,24 +30,21 @@ var passCheckers = [
 
 var usernameCheckers = [
     () => {
-        let result = null;
-
         var request = new XMLHttpRequest();
-        request.timeout = 2500;
         request.open(
             "GET",
             "/api/client/checkuser?user=" + username.val(),
             false
         );
-        request.send();
-
-        if (false) {
-            // TODO Add error detection
-            return "Error fetching username availability, please try again";
+        try {
+            request.send();
+        } catch {
+            return "Error fetching availability, please try again";
         }
 
-        if (false) {
-            // TODO Add user check fail
+        let result = request.responseText;
+
+        if (result == "1") {
             return "Username taken";
         }
 
@@ -62,6 +59,7 @@ function checkElement(el, checkers) {
 
         if (result != "") {
             el.setCustomValidity(result);
+            $("form").get(0).reportValidity();
             return false;
         }
     }
@@ -106,4 +104,8 @@ $("form")
 
 $("#password1, #password2").on("input", () => {
     clearPass();
+});
+
+username.on("input", () => {
+    username.get(0).setCustomValidity("");
 });
